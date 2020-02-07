@@ -174,7 +174,7 @@
                         <div class="header-nav navbar-collapse collapse ">
                             <ul class=" nav navbar-nav">
                                 <li >
-                                    <a href="{{url('/')}}">Home<i aria-hidden="true"></i></a>
+                                    <a href="{{url('/main_home')}}">Home<i aria-hidden="true"></i></a>
                                   
                                 </li>
                             
