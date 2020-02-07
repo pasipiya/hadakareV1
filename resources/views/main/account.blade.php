@@ -15,7 +15,7 @@
                             </div>
                             <div class="col-md-7 col-sm-7">
                               <div class="about4-content">
-                                    <h2><span class="text-primary">Welcome to </span> {{$user->salon_name}} </h2>
+                                    <h2><span class="text-primary">Welcome to </span> {{$user->saloon_name}} </h2>
                                     <p> {{$user->description}} </p>
                                     <div class="text-right p-b30">
                                       <img src="main/images/sign.png" alt="">
