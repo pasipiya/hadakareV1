@@ -40,9 +40,9 @@
                                             <div class="widget bg-white ">
                                                 <h4 class="widget-title">Search</h4>
                                                 <div class="search-bx"> 
-                                                        <form class="example" action="searchtrending">
+                                                        <form class="example" action="search_trending">
                                                                 <div class="input-group">
-                                                                <input value="" type="text" placeholder="Search a Salon.." name="search_trending" class="form-control" placeholder="Trending search">
+                                                                <input value="" type="text" placeholder="Search Trendings.." name="search_trending" class="form-control" placeholder="Trending search">
                                                                 <button type="submit" class="site-button"><i class="fa fa-search"></i></button>
                                                                 </div>
                                                             </form>

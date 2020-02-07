@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use App\Category;
+use App\Trending;
+use App\User;
+use App\Role;
 
 class TrendingsController extends Controller
 {
@@ -87,10 +92,10 @@ class TrendingsController extends Controller
 
     public function main_search_trending(){
         $q = $_GET['search_trending'];
-        $categories = Category::where ( 'cat_name', 'LIKE', '%' . $q . '%' )->get ();
+        $categories = Category::where ( 'category_name', 'LIKE', '%' . $q . '%' )->get ();
         if (count ( $categories ) > 0)
         // return User::find($users);
-            return view ( 'main.trending' )->with('categories',$categories)->withQuery ( $q );
+            return view ('main/trending')->with('category',$categories)->withQuery ( $q );
          
         
     }
