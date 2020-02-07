@@ -89,6 +89,13 @@
       <option value="Kurunegala">Kurunegala</option>
       <option value="Colombo">Colombo</option>
       <option value="Galle">Galle</option>
+      <option value="Kaluthara">Kaluthara</option>
+      <option value="Kandy">Kandy</option>
+      <option value="Anuradhapura">Anuradhapura</option>
+      <option value="Badulla">Badulla</option>
+      <option value="Gampaha">Gampaha/option>
+      <option value="Hambanthota">Hambanthota</option>
+      <option value="Kegalle">Kegalle</option>
     </select>
   </div>    
 
@@ -227,7 +234,7 @@
                           </a>
                           @endif
                           
-                          
+                          <!--
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-folder">
                               </i>
@@ -239,7 +246,7 @@
                               </i>
                               Edit
                           </a>
-                          
+                          -->
                           <a onclick="return confirm('Do you want to delete the saloon?')" class="btn btn-danger btn-sm" href="{{url('/delete_saloon/'.$row->id )}}">
                               <i class="fas fa-trash">
                               </i>
@@ -335,6 +342,8 @@
                           <span class="badge badge-danger">Deactive</span>
                         @endif 
                       <td class="project-actions text-right">
+
+                      <!--
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-folder">
                               </i>
@@ -346,7 +355,7 @@
                               </i>
                               Edit
                           </a>
-                          
+                          -->
                           <a onclick="return confirm('Do you want to delete the saloon?')" class="btn btn-danger btn-sm" href="{{url('/delete_saloon/'.$row->id )}}">
                               <i class="fas fa-trash">
                               </i>

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Role;
+use App\Saloon;
 use Auth;
+Use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -14,7 +16,15 @@ class UserController extends Controller
    
    
     
+    public function getCreatedAtAttribute($date)
+    {
+        return Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
+    }
     
+    public function getUpdatedAtAttribute($date)
+    {
+        return Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
+    }  
     
     
 //check authentication  
@@ -41,6 +51,12 @@ class UserController extends Controller
     {   
    $id=Auth::user()->id; 
         $users = DB::table('users')->select('*')->where('id',$id)->get();
+        $users = DB::table('users')
+        ->join('saloon', 'users.id', '=', 'saloon.user_id')
+      //  ->join('orders', 'users.id', '=', 'orders.user_id')
+        ->select('users.*','users.pic as userPic', 'saloon.*')
+        ->get();
+
     //return view('admin/create_users',compact('users'));
     return view('admin/edit_profile')->with('users',$users);
     } 
@@ -103,12 +119,16 @@ class UserController extends Controller
         $user->name = $request->get('name');
         $user->address = $request->get('address');
         $user->contact = $request->get('contact');
+        $user->updated_at = $request->get('2020-02-07 18:21:59.000000');
+        $user->created_at = $request->get('2020-02-07 18:21:59.000000');
+        //$user->created_at = Carbon::now()->setTime(0,0)->format('Y-m-d H:i:s');
+        //$user->updated_at = Carbon::now()->setTime(0,0)->format('Y-m-d H:i:s');
+
         $user->pic = $imageName;
-        
+
     
         $user->save();
-        
-         $request->session()->flash('success','User Information Updated Successfully');
+        $request->session()->flash('success','User Information Updated Successfully');
         return redirect('edit_profile');
       
     }
