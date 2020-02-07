@@ -134,3 +134,11 @@ Route::get('main_trending',function(){
    return view('main/trending');
 });
 
+//salons
+Route::get('/main_salons', 'SaloonController@main_index');
+Route::get('/search','SaloonController@main_search_salons');
+
+//trendings
+//salons
+Route::get('/main_trendings', 'CategoryController@main_index');
+Route::get('/search_trending', 'TrendingsController@main_search_trending');

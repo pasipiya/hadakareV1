@@ -153,4 +153,20 @@ public function __construct()
         $request->session()->flash('delete','Saloon Deleted Successfully');
         return redirect('edit_saloon');
     }
+
+    public function main_index()
+    {
+        $salons = Saloon::all();
+        return view('main/salon')->with('saloons',$salons);
+    }
+
+    public function main_search_salons(){
+        $q = $_GET['search1'];
+        $salons = Saloon::where ( 'saloon_name', 'LIKE', '%' . $q . '%' )->orWhere ( 'city', 'LIKE', '%' . $q . '%' )->get ();
+        if (count ( $salons ) > 0)
+        // return User::find($users);
+            return view ( 'main.salon' )->with('saloons',$salons)->withQuery ( $q );
+         else
+             return view ('main.salon')->withMessage ('No Details found. Try to search again !')->with('saloons',$salons);
+    }
 }

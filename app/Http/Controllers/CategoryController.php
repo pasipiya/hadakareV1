@@ -80,6 +80,12 @@ class CategoryController extends Controller
         $request->session()->flash('delete','Category Deleted Successfully');
         return redirect('create_category');
     }
+
+    public function main_index()
+    {
+        $category=Category::all();
+        return view('main/trending')->with('category',$category);
+    }
 }
 
 
