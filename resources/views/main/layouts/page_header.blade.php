@@ -127,16 +127,16 @@
                         <div class="header-nav navbar-collapse collapse ">
                             <ul class=" nav navbar-nav">
                                 <li class="active">
-                                    <a href=" ">Home<i class="fa fa-chevron"></i></a>
+                                    <a href="">Home<i class="fa fa-chevron"></i></a>
                                 </li>
                             
                                 <li>
-                                    <a href="main_trending">Trending<i class="fa fa-chevron"></i></a>
+                                    <a href="main_trendings">Trending<i class="fa fa-chevron"></i></a>
                                     
                                 </li>
 
                                 <li>
-                                    <a href="main_salon">Salons<i class="fa fa-chevron"></i></a>
+                                    <a href="main_salons">Salons<i class="fa fa-chevron"></i></a>
                                     
                                 </li>
                                                                 <!-- Right Side Of Navbar -->

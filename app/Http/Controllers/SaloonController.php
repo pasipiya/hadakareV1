@@ -114,7 +114,9 @@ public function __construct()
      */
     public function show(Saloon $saloon)
     {
-        //
+        $id = $_GET['salon'];
+        $salons = Saloon::where ( 'id', 'LIKE', '%' . $id . '%' )->get ();
+        return view ( 'main.account' )->with('saloons',$salons)->withQuery ( $id );
     }
 
     /**

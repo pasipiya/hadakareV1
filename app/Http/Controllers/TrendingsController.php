@@ -96,7 +96,10 @@ class TrendingsController extends Controller
         if (count ( $categories ) > 0)
         // return User::find($users);
             return view ('main/trending')->with('category',$categories)->withQuery ( $q );
+        else
+            return view ('main/trending')->withMessage('No trendings found. Try to search again !')->with('category',$categories);
          
+
         
     }
 }

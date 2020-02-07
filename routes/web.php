@@ -137,6 +137,7 @@ Route::get('main_trending',function(){
 //salons
 Route::get('/main_salons', 'SaloonController@main_index');
 Route::get('/search','SaloonController@main_search_salons');
+Route::get('/main_salon_account','SaloonController@show');
 
 //trendings
 //salons

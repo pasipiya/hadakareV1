@@ -212,9 +212,9 @@
                                                                 @endif --}}
                                                                 <div class="p-t10">
                                                                 {{-- <button class="site-button  m-r15" type="button"><a href="salon/{{$user->id}}">See more</a><i class="fa fa-angle-double-right"></i></button> --}}
-                                                                <form class="example" action="searchsalon">
+                                                                <form class="example" action="main_salon_account">
                                                                     
-                                                                    <button class="site-button  m-r15" value="{{$salon->salon_id}}" name="salon" type="submit">See more<i class="fa fa-angle-double-right"></i></button>
+                                                                    <button class="site-button  m-r15" value="{{$salon->id}}" name="salon" type="submit">See more<i class="fa fa-angle-double-right"></i></button>
                                                                 
                                                                 </form>    
                                                             </div>

@@ -16,6 +16,7 @@ class CreateSaloonTable extends Migration
         Schema::create('saloon', function (Blueprint $table) {
             $table->bigIncrements('id');
              $table->string('saloon_name')->nullable();
+             $table->string('saloon_des')->nullable();
              $table->string('address')->nullable();
              $table->string('logo')->nullable();
              $table->string('status')->nullable();
