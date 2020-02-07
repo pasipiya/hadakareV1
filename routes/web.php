@@ -150,6 +150,15 @@ Route::get('/main_trendings', 'CategoryController@main_index');
 Route::get('/search_trending', 'TrendingsController@main_search_trending');
 
 
+<<<<<<< Updated upstream
 //contact
 Route::get('/contact_us', 'ContactController@main_index');
 Route::post('/submit_msg', 'ContactController@submitcontact');
+=======
+//Contact
+Route::get('/contact', 'ContactController@index');
+Route::get('/delete_message/{id}', 'ContactController@destroy');
+
+//booking
+Route::post('/make_appoinment','BookingController@create');
+>>>>>>> Stashed changes

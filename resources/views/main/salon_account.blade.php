@@ -22,7 +22,7 @@
                                       <img src="main/images/sign.png" alt="">
                                     </div>    
                                     <div>
-                                        <form class="radius-sm" action="/make_appoinment">
+                                        <form class="radius-sm" action="make_appoinment">
                                                                     
                                                     <button class="site-button font-weight-700 inline-block text-uppercase p-lr15" value="{{$user->saloon_id}}" name="saloon_id" type="submit">Book now1>><i class="fa fa-angle-double-right"></i></button>
                                                 

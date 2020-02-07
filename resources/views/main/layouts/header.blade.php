@@ -179,7 +179,7 @@
                                 </li>
                             
                                 <li>
-                                    <a href="{{url('main_trending')}}">Treanding<i ></i></a>
+                                    <a href="main_trendings">Treanding<i ></i></a>
                                     <!--<ul class="sub-menu">
                                         <li>
                                            
@@ -260,7 +260,7 @@
                                 </li>
                                 
                                 <li class="submenu-direction">
-                                    <a href="{{url('main_salon')}}">Salons<i ></i></a>
+                                    <a href="main_salons">Salons<i ></i></a>
                                     <!--<ul class="sub-menu">
                                     	<li>
                                             <a href="javascript:;">Media</a>

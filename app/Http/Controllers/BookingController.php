@@ -64,7 +64,24 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        $this->validate($request,[
+            'customer_name'=>'required',
+            'catergory'=>'required',
+            'time_from'=>'nullable',
+            'time_to'=>'nullable',
+            'date'=>'nullable',
+            'description'=>'nullable'
+
+        ]);
+
+        //Create post
+        $booking = new Booking;
+        $booking->user_id=Auth::user()->id;
+        $booking->saloon_id=Auth::user()->id;
+        $booking->customer_name=$request->input('customer_name');
+        $booking->catergory=$request->input('catergory');
+        $booking->save();
+        return redirect('/main_salon_account');
     }
 
     /**
@@ -126,5 +143,14 @@ class BookingController extends Controller
         $saloon->delete();
          $request->session()->flash('delete','Booking Deleted Successfully');
         return redirect('booking_admin');
+    }
+
+    public function main_index()
+    {
+        $id=Auth::user()->id;
+        $allSaloon = Saloon::all();
+        $saloon_data = DB::table('saloon')->select('*')->where('user_id',$id)->get();
+         return view('admin/edit_saloon')->with('saloon_data',$saloon_data)->with('allSaloon',$allSaloon);
+        //return view('admin/edit_saloon',compact('saloon_data'));
     }
 }
