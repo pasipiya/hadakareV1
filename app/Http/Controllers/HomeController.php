@@ -42,6 +42,16 @@ class HomeController extends Controller
            
             $bookingNO=sizeof($booking);
             $request->session()->flash('bookingNO',"$bookingNO");
+
+
+
+            $contact_admin = DB::table('contact')->select('*')->where('user_id',$id)->where('role_id','1')->get();
+            $contact_saloon = DB::table('contact')->select('*')->where('user_id',$id)->where('role_id','2')->get();
+            $ContactNOAdmin=sizeof($contact_admin);
+            $request->session()->flash('ContactNOAdmin',"$ContactNOAdmin");
+            $ContactNOSaloon=sizeof($contact_saloon);
+            $request->session()->flash('ContactNOSaloon',"$ContactNOSaloon");
+          
         
            //$booking = DB::table('booking')->where('user_id', '35');
            //return view('admin/booking',compact('booking'));

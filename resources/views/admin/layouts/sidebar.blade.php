@@ -418,9 +418,9 @@
             
           <li class="nav-header">MISCELLANEOUS</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url('/contact') }}" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>Documentation</p>
+              <p>Contact</p>
             </a>
           </li>
             

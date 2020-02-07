@@ -142,3 +142,8 @@ Route::get('/search','SaloonController@main_search_salons');
 //salons
 Route::get('/main_trendings', 'CategoryController@main_index');
 Route::get('/search_trending', 'TrendingsController@main_search_trending');
+
+
+//Contact
+Route::get('/contact', 'ContactController@index');
+Route::get('/delete_message/{id}', 'ContactController@destroy');
