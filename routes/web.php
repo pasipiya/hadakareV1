@@ -146,6 +146,8 @@ Route::get('/search_trending', 'TrendingsController@main_search_trending');
 
 
 
+
+
 //contact
 Route::get('/contact_us', 'ContactController@main_index');
 Route::post('/submit_msg', 'ContactController@submitcontact');
@@ -156,3 +158,10 @@ Route::get('/delete_message/{id}', 'ContactController@destroy');
 
 //booking
 //Contact
+
+
+
+
+Route::get('/more_trendings', function () {
+   return view('main.more_trendings');
+})->middleware('auth');

@@ -418,15 +418,17 @@
                                         <div class="wt-team-media">
                                             <div class="wt-box">
                                                 <div class="wt-thum-bx wt-img-effect side-pan">
-                                                    <a href="javascript:void(0);"><img style="width:100%; height:240px;" src="main/images/trending/{{$category->img_url}}"" class="" alt=""></a>
+           
+            <a href="javascript:void(0);"><img style="width:100%; height:240px;" src="main/images/{{$category->pic}}"" class="" alt=""></a>
                                                 </div>
                                             </div>
     
                                         </div>
                                         <div class="wt-team-info text-center bg-white p-a10">
-                                        <h4 class="wt-team-title"><a href="javascript:void(0);">{{$category->cat_name}}</a></h4>
+           
+                                        <h4 class="wt-team-title"><a href="javascript:void(0);">{{$category->category_name}}</a></h4>
     
-                                            <button class="m-b15 site-button m-r15" type="button" style="background-color:mediumvioletred;">See More >></button>
+                                            <button class="m-b15 site-button m-r15" type="button" style="background-color:mediumvioletred;"><a href="more_trendings">See More </a></button>
     
                                         </div>
                                     </div>
