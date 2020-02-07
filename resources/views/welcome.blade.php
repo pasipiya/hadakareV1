@@ -1932,6 +1932,8 @@
                 </div>
             </div>-->
             <!-- GALLERY STYLE-2 End --> 
+
+            
                                
             <!-- CONTACT US SECTION END  --> 
 			<div class="section-full overlay-wraper bg-parallax" data-stellar-background-ratio="0.2" style="background-image:url(main/images/salonmap.png);">
