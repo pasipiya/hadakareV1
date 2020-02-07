@@ -184,7 +184,7 @@
                           </a>
                           @endif
                           
-                          
+                          <!--
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-folder">
                               </i>
@@ -196,7 +196,7 @@
                               </i>
                               Edit
                           </a>
-                          
+                          -->
                           <a onclick="return confirm('Do you want to delete the Category?')" class="btn btn-danger btn-sm" href="{{url('/delete_category/'.$row->id )}}">
                               <i class="fas fa-trash">
                               </i>
@@ -273,7 +273,7 @@
                             
 
                             
-                            
+                            <!--
                             <a class="btn btn-primary btn-sm" href="#">
                                 <i class="fas fa-folder">
                                 </i>
@@ -285,7 +285,7 @@
                                 </i>
                                 Edit
                             </a>
-               
+               -->
               
                         </td>
                     </tr>

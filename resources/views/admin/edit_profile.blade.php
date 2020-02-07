@@ -56,8 +56,9 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                     @foreach($users as $user)
+                  
                   <img class="profile-user-img img-fluid img-circle"
-                       src="{{ asset('images/' . $user->pic)}}"
+                       src="{{ asset('images/'. $user->userPic)}}"
                        alt="User profile picture">
                       
                 </div>
@@ -89,7 +90,7 @@
           
                 </ul>
  
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+              
               </div>
               <!-- /.card-body -->
             </div>
@@ -179,7 +180,7 @@
                   @endif
               </div>
               <div class="widget-user-image">
-                <img class="img-circle elevation-2" src="{{ asset('images/' . $user->pic)}}" alt="User Avatar">
+                <img class="img-circle elevation-2" src="{{ asset('images/' . $user->userPic)}}" alt="User Avatar">
               </div>
               <div class="card-footer">
                 <div class="row">
@@ -193,16 +194,17 @@
                   <!-- /.col -->
                   <div class="col-sm-4 border-right">
                     <div class="description-block">
-                      <h5 class="description-header">13,000</h5>
-                      <span class="description-text">FOLLOWERS</span>
+                      <h5 class="description-header">Saloon Name</h5>
+                      <span class="description-text">{{$user->saloon_name}}</span>
                     </div>
                     <!-- /.description-block -->
                   </div>
+                  @endforeach 
                   <!-- /.col -->
                   <div class="col-sm-4">
                     <div class="description-block">
-                      <h5 class="description-header">35</h5>
-                      <span class="description-text">PRODUCTS</span>
+                      <h5 class="description-header">Available Bookings</h5>
+                      <span class="description-text">{{session('bookingNO')}}</span>
                     </div>
                     <!-- /.description-block -->
                   </div>
@@ -214,7 +216,7 @@
             <!-- /.widget-user -->
           </div>
                     
-              @endforeach     
+                  
                         
                         
                         

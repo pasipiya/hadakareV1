@@ -28,6 +28,8 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         Concerns\GuardsAttributes,
         ForwardsCalls;
 
+    
+    
     /**
      * The connection name for the model.
      *
