@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Booking;
+use App\Saloon;
 use Auth;
 class BookingController extends Controller
 {
@@ -153,4 +154,13 @@ class BookingController extends Controller
          return view('admin/edit_saloon')->with('saloon_data',$saloon_data)->with('allSaloon',$allSaloon);
         //return view('admin/edit_saloon',compact('saloon_data'));
     }
+
+    public function show_booking_form()
+    {
+        $id = $_GET['salon'];
+        $salons = Saloon::where ( 'id', 'LIKE', '%' . $id . '%' )->get ();
+        return view ( 'main.make_appoinment' )->with('salons',$salons)->withQuery ( $id );
+    }
+    
+    
 }

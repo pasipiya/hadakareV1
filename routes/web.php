@@ -157,11 +157,12 @@ Route::get('/contact', 'ContactController@index');
 Route::get('/delete_message/{id}', 'ContactController@destroy');
 
 //booking
+Route::get('/make_appoinment', 'BookingController@show_booking_form');
 //Contact
 
 
 
-
-Route::get('/more_trendings', function () {
-   return view('main.more_trendings');
-})->middleware('auth');
+Route::get('/more_trendings', 'TrendingsController@show_more_trending');
+// Route::get('/more_trendings', function () {
+//    return view('main.more_trendings');
+// })->middleware('auth');
