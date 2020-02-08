@@ -427,9 +427,12 @@
                                         <div class="wt-team-info text-center bg-white p-a10">
            
                                         <h4 class="wt-team-title"><a href="javascript:void(0);">{{$category->category_name}}</a></h4>
-    
-                                            <button class="m-b15 site-button m-r15" type="button" style="background-color:mediumvioletred;"><a href="more_trendings">See More </a></button>
-    
+                                        <form class="example" action="more_trendings">
+                                                                    
+                                            <button class="m-b15 site-button m-r15" value="{{$category->id}}" name="category" style="background-color:mediumvioletred;" type="submit">See more<i class="fa fa-angle-double-right"></i></button>
+                                        
+                                        </form> 
+                                           
                                         </div>
                                     </div>
                                 </div>

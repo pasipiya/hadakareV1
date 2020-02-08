@@ -37,7 +37,38 @@
 
 <!-- TREND CAT start -->
 <div class="container">
-                    <div class="row">
+    @if(count($trendings)>0)
+                            @foreach($trendings as $category)
+                        <div class="row">
+
+                            <!-- COLUMNS 4 -->
+                            
+                            <div class="col-md-4 col-sm-4 p-tb15">
+                                    <div class="wt-team-one bg-white">
+                                        <div class="wt-team-media">
+                                            <div class="wt-box">
+                                                <div class="wt-thum-bx wt-img-effect side-pan">
+           
+                        <a href="javascript:void(0);"><img style="width:100%; height:240px;" src="main/images/{{$category->trendig_pic}}"" class="" alt=""></a>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                        <div class="wt-team-info text-center bg-white p-a10">
+           
+                                        <h4 class="wt-team-title"><a href="javascript:void(0);">{{$category->trendig_name}}</a></h4>
+                                        
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                            @endforeach
+                            @endif
+                        </div>
+                    {{-- <div class="row">
+
                         <div class="col-md-4 col-sm-6">
                             <div class="flip-container vertical">
                                  <div class="wt-box">
@@ -54,7 +85,7 @@
                             
                        
     </div>
-</div>
+</div> --}}
 <!-- TREND CAT END -->
 
 

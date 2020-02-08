@@ -102,4 +102,10 @@ class TrendingsController extends Controller
 
         
     }
+    public function show_more_trending()
+    {
+        $id = $_GET['category'];
+        $trending = Trending::where ( 'cat_id', 'LIKE', '%' . $id . '%' )->get ();
+        return view ( 'main/more_trendings' )->with('trendings',$trending)->withQuery ( $id );
+    }
 }
