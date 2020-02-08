@@ -22,10 +22,17 @@ class ContactController extends Controller
     }  
 
 
+
+    public function main_index(Request $request)
+    {
+        return view('main/contact_us');
+    }
+
+
     public function index(Request $request)
     {
         $id=Auth::user()->id;
-        $contact_admin = DB::table('contact')->select('*')->where('user_id',$id)->where('role_id','1')->get();
+        $contact_admin = DB::table('contact')->select('*')->where('role_id','1')->get();
         $contact_saloon = DB::table('contact')->select('*')->where('user_id',$id)->where('role_id','2')->get();
         $ContactNOAdmin=sizeof($contact_admin);
         $request->session()->flash('ContactNOAdmin',"$ContactNOAdmin");
@@ -35,8 +42,37 @@ class ContactController extends Controller
         ->with('contact_saloon',$contact_saloon);
         
 
-        //->with('booking_user',$booking_user);
     }
+
+
+    public function submitcontact(Request $request)
+    {
+        
+
+        
+        request()->validate([
+            'name' =>'required',
+            'email' =>'required',
+            'msg' =>'required',
+        ]);
+
+           
+        $contact = new Contact([
+           'name' => $request->get('name'),
+           'email' =>$request->get('email'), 
+           'contactNo' =>$request->get('contactNo'),
+           'msg' =>$request->get('msg'),
+           'role_id' =>$request->get('role_id')
+       ]);
+        $contact->save();
+        $request->session()->flash('success','Message Submit Successfully');
+        return redirect('contact_us');
+        
+        return view('main/contact_us');
+    }
+
+
+
 
     public function destroy(Request $request, $id)
     {

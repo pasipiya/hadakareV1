@@ -45,7 +45,7 @@ class HomeController extends Controller
 
 
 
-            $contact_admin = DB::table('contact')->select('*')->where('user_id',$id)->where('role_id','1')->get();
+            $contact_admin = DB::table('contact')->select('*')->where('role_id','1')->get();
             $contact_saloon = DB::table('contact')->select('*')->where('user_id',$id)->where('role_id','2')->get();
             $ContactNOAdmin=sizeof($contact_admin);
             $request->session()->flash('ContactNOAdmin',"$ContactNOAdmin");
@@ -55,6 +55,16 @@ class HomeController extends Controller
         
            //$booking = DB::table('booking')->where('user_id', '35');
            //return view('admin/booking',compact('booking'));
+
+           $NoUsers = DB::table('users')->select('*')->where('role_id','2')->get();
+           $NoUsers=sizeof($NoUsers);
+           $request->session()->flash('NoOwners',"$NoUsers");
+
+           $NoUsers = DB::table('users')->select('*')->where('role_id','3')->get();
+           $NoUsers=sizeof($NoUsers);
+           $request->session()->flash('NoCustomers',"$NoUsers");
+
+
            return view('home')->with('booking',$booking)->with('booking_user',$booking_user);
        }
 

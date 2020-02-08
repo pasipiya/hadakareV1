@@ -249,7 +249,7 @@
                         
                             
                                 <li>
-                                    <a href="#">Contact us<i ></i></a>
+                                    <a href="{{url('contact_us')}}">Contact us<i ></i></a>
                                   <!--  <ul class="sub-menu">
                                         <li><a href="product.html">Product</a></li>
                                         <li><a href="product-detail.html">Product Detail</a></li>
